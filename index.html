@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VideoForge — FFmpeg Kontrol Paneli</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="noise"></div>
+
+  <!-- AMBIENT BACKGROUND GLOWS & GRID -->
+  <div class="hero-glow hero-glow-1"></div>
+  <div class="hero-glow hero-glow-2"></div>
+  <div class="hero-grid-pattern"></div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="header-left">
+        <a href="#" class="logo">
+          <div class="logo-icon-wrap">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <rect width="32" height="32" rx="9" fill="url(#lg1)"/>
+              <path d="M11 9.5 L23 16 L11 22.5 Z" fill="white"/>
+              <defs>
+                <linearGradient id="lg1" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#6366f1"/>
+                  <stop offset="0.5" stop-color="#8b5cf6"/>
+                  <stop offset="1" stop-color="#d946ef"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <div class="logo-glow"></div>
+          </div>
+          <span class="logo-text">VideoForge</span>
+          <span class="logo-version">v2.4</span>
+        </a>
+
+        <!-- NAV LINKS -->
+        <nav class="nav-menu">
+          <a href="#card-audio-trimmer" class="nav-link"><span class="nav-link-icon">🎵</span> Ses Stüdyosu</a>
+          <a href="#card-video-fx" class="nav-link"><span class="nav-link-icon">🎨</span> Efektler & FX</a>
+          <a href="#card-pip-split" class="nav-link"><span class="nav-link-icon">🖼️</span> PiP & Split</a>
+          <a href="#card-auto-sub" class="nav-link"><span class="nav-link-icon">🤖</span> Whisper AI</a>
+          <a href="#features-section" class="nav-link"><span class="nav-link-icon">🎬</span> Tüm Araçlar</a>
+        </nav>
+      </div>
+
+      <div class="header-right">
+        <div class="header-badges hide-mobile">
+          <span class="badge badge-tech">FFmpeg 7.x</span>
+          <span class="badge badge-tech">Python</span>
+          <span class="badge badge-green">● Ücretsiz</span>
+        </div>
+        <a href="#card-audio-trimmer" class="btn btn-nav-cta">
+          <span>Stüdyoyu Başlat</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <!-- ANNOUNCEMENT PILL -->
+      <a href="#card-audio-trimmer" class="hero-announcement">
+        <span class="announcement-badge">YENİ</span>
+        <span class="announcement-text">Canlı MP3 Dalga Editörü & Whisper AI Yayında</span>
+        <span class="announcement-arrow">→</span>
+      </a>
+
+      <h1 class="hero-title">
+        Video & Ses Düzenle,<br/>
+        <span class="hero-gradient-text">Sınır Tanıma.</span>
+      </h1>
+
+      <p class="hero-sub">
+        FFmpeg ve Python gücüyle video kesme, birleştirme, profesyonel ses kırpma, otomatik AI altyazı ve yüksek hızlı format dönüştürme — hepsi modern ve akıcı tek bir panelde.
+      </p>
+
+      <!-- HERO ACTIONS / CTA -->
+      <div class="hero-actions">
+        <a href="#card-audio-trimmer" class="btn btn-hero-primary">
+          <span class="btn-icon">⚡</span>
+          <span>Hemen Düzenlemeye Başla</span>
+        </a>
+        <a href="#features-section" class="btn btn-hero-secondary">
+          <span class="btn-icon">🛠️</span>
+          <span>Tüm Araçları İncele</span>
+        </a>
+      </div>
+
+      <!-- TRUST & STATS PILLS -->
+      <div class="hero-trust-bar">
+        <div class="trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>%100 Yerel & Güvenli</span>
+        </div>
+        <div class="trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          <span>Kayıpsız Kalite (Lossless)</span>
+        </div>
+        <div class="trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          <span>Açık Kaynak & Ücretsiz</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- HERO VISUAL (MOCKUP + FLOATING CHIPS) -->
+    <div class="hero-visual">
+      <!-- FLOATING CHIP TOP -->
+      <div class="floating-chip chip-top">
+        <div class="chip-icon-box chip-audio">🎵</div>
+        <div class="chip-content">
+          <div class="chip-title">Canlı Dalga Editörü</div>
+          <div class="chip-sub">Kayıpsız MP3 Kırpma & Boost</div>
+        </div>
+        <span class="chip-status-pulse"></span>
+      </div>
+
+      <!-- FLOATING CHIP BOTTOM -->
+      <div class="floating-chip chip-bottom">
+        <div class="chip-icon-box chip-ai">🤖</div>
+        <div class="chip-content">
+          <div class="chip-title">Whisper AI Altyazı</div>
+          <div class="chip-sub">Otomatik Türkçe Senkron</div>
+        </div>
+        <span class="chip-badge-tag">AI 4K</span>
+      </div>
+
+      <!-- TERMINAL PREVIEW WINDOW -->
+      <div class="terminal-preview modern-term">
+        <div class="terminal-bar">
+          <div class="terminal-controls">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+
+          <!-- TERMINAL TABS -->
+          <div class="terminal-tabs">
+            <div class="term-tab active" onclick="switchTermTab(0)">
+              <span class="term-tab-icon">⚡</span> ffmpeg.sh
+            </div>
+            <div class="term-tab" onclick="switchTermTab(1)">
+              <span class="term-tab-icon">🤖</span> whisper-ai.py
+            </div>
+            <div class="term-tab" onclick="switchTermTab(2)">
+              <span class="term-tab-icon">📊</span> status.log
+            </div>
+          </div>
+
+          <div class="terminal-meta">
+            <span class="live-indicator">● Canlı</span>
+          </div>
+        </div>
+
+        <div class="terminal-body" id="heroTerminal">
+          <div class="term-lines">
+            <div class="term-line">
+              <span class="t-num">1</span>
+              <span class="t-prompt">videoforge@local:~$</span>
+              <span class="t-cmd" id="typingText"></span><span class="cursor">▋</span>
+            </div>
+            <div class="term-log-output" id="termLiveStatus">
+              <span class="t-success">✔ VideoForge Motoru Hazır:</span> <span class="t-dim">[FFmpeg 7.1-GPU]</span>
+              <div class="term-progress-row">
+                <span class="term-progress-bar"><span class="term-progress-fill"></span></span>
+                <span class="t-highlight">100% (Lossless Cut)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES GRID -->
+  <section class="features" id="features-section">
+    <div class="features-header">
+      <div class="section-tag">GELİŞMİŞ ARAÇ SETİ</div>
+      <h2>Güçlü & Esnek Video/Ses Araçları</h2>
+      <p>İhtiyacınıza göre aracı seçin, parametreleri belirleyin ve anında uygulayın</p>
+    </div>
+    <div class="features-grid">
+
+      <!-- 🎧 MP3 KIRPMA VE SES DÜZENLEME STÜDYOSU -->
+      <div class="card card-studio" id="card-audio-trimmer">
+        <div class="studio-header">
+          <div class="studio-header-left">
+            <div class="card-icon" style="background: rgba(139,92,246,0.2); border-color: #8b5cf6;">🎧</div>
+            <div>
+              <h3 style="font-size: 20px;">MP3 Kırpma & Ses Düzenleme Stüdyosu</h3>
+              <p class="card-desc" style="margin: 0;">MP3 dosyanızı yükleyin, dalga grafiği üzerinde istediğiniz aralığı seçip kırpın, ses seviyesi ve efektleri ayarlayın.</p>
+            </div>
+          </div>
+          <div class="header-badges">
+            <span class="badge badge-purple">Canlı Oynatıcı</span>
+            <span class="badge badge-green">Anında İndir</span>
+          </div>
+        </div>
+
+        <!-- 1. DOSYA YÜKLE / SEÇ -->
+        <div class="file-drop-zone" id="audioDropZone" onclick="document.getElementById('audioFileInput').click()">
+          <input type="file" id="audioFileInput" accept="audio/*" style="display:none" onchange="handleAudioUpload(event)" />
+          <div class="drop-icon">🎵</div>
+          <div class="drop-text" id="dropLabel">MP3 veya Ses Dosyası Seçmek İçin Tıklayın veya Sürükleyin</div>
+          <div class="drop-sub" id="dropSub">MP3, WAV, AAC, M4A, OGG desteklenir</div>
+        </div>
+
+        <div class="form-group" style="margin-top: 4px;">
+          <label>Veya Bilgisayardaki Yerel Dosya Yolu (FFmpeg Komutu İçin)</label>
+          <input type="text" id="studio-audio-path" placeholder="C:\Users\mbektas\Downloads\ses.mp3" />
+        </div>
+
+        <!-- 2. DALGA GRAFİĞİ & TIMELINE -->
+        <div class="waveform-wrap" id="waveformWrap">
+          <canvas id="waveformCanvas" class="waveform-canvas"></canvas>
+          <div class="timeline-scrubber" id="timelineScrubber" onclick="seekAudioFromScrubber(event)">
+            <div class="timeline-progress" id="timelineProgress"></div>
+          </div>
+        </div>
+
+        <!-- 3. OYNATICI ÇUBUĞU -->
+        <div class="studio-player-bar">
+          <div class="player-actions">
+            <button class="btn btn-circle" id="btnPlayPause" onclick="toggleAudioPlay()" title="Oynat / Duraklat (Space)">▶️</button>
+            <button class="btn btn-sm btn-outline" onclick="playSelectedRange()" title="Seçili Aralığı Dinle">🔁 Seçili Alanı Çal</button>
+            <button class="btn btn-sm btn-outline" onclick="stopAudioPlayback()">⏹️ Durdur <span class="kbd-hint"><kbd>Esc</kbd></span></button>
+          </div>
+          <div class="time-display-box">
+            <span class="time-curr" id="audioTimeCurrent">00:00.0</span>
+            <span class="time-dur" id="audioTimeTotal">/ 00:00.0</span>
+            <span class="time-sel" id="audioTimeSelected">Seçili Aralık: 00:00 - 00:00 (0.0 sn)</span>
+          </div>
+        </div>
+
+        <!-- 4. KONTROLLER & İNCE AYARLAR -->
+        <div class="studio-controls-grid">
+          <!-- Kırpma Aralığı -->
+          <div class="control-card">
+            <h4>✂️ Kırpma Aralığı</h4>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Başlangıç (sn / ss:dd:ss)</label>
+                <input type="text" id="trim-start" value="00:00:00" onchange="updateTrimFromInputs()" />
+                <button class="btn btn-sm btn-outline" style="margin-top:4px; font-size:11px; padding:4px 8px;" onclick="setStartToCurrent()">📍 Şu Anki Konum</button>
+              </div>
+              <div class="form-group">
+                <label>Bitiş (sn / ss:dd:ss)</label>
+                <input type="text" id="trim-end" value="00:00:30" onchange="updateTrimFromInputs()" />
+                <button class="btn btn-sm btn-outline" style="margin-top:4px; font-size:11px; padding:4px 8px;" onclick="setEndToCurrent()">📍 Şu Anki Konum</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ses Seviyesi & Boost -->
+          <div class="control-card">
+            <h4>🔊 Ses Seviyesi</h4>
+            <div class="slider-group" style="margin-top: 8px;">
+              <input type="range" id="trim-volume" min="0" max="3" step="0.1" value="1" oninput="updateAudioVolLabel(this.value)" />
+              <span id="trim-vol-label" class="speed-display" style="min-width:70px;">100%</span>
+            </div>
+            <label style="margin-top:6px; font-size:11px; color:var(--text-dim);">Düşük sesli kayıtları %300'e kadar yükseltebilirsiniz.</label>
+          </div>
+
+          <!-- Fade In / Out -->
+          <div class="control-card">
+            <h4>📈 Yumuşak Geçiş (Fade)</h4>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Fade In (Giriş)</label>
+                <select id="trim-fade-in">
+                  <option value="0">Kapalı (0s)</option>
+                  <option value="1">1 Saniye</option>
+                  <option value="2">2 Saniye</option>
+                  <option value="3">3 Saniye</option>
+                  <option value="5">5 Saniye</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Fade Out (Çıkış)</label>
+                <select id="trim-fade-out">
+                  <option value="0">Kapalı (0s)</option>
+                  <option value="1">1 Saniye</option>
+                  <option value="2">2 Saniye</option>
+                  <option value="3">3 Saniye</option>
+                  <option value="5">5 Saniye</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hız & Çıkış Dosyası -->
+          <div class="control-card">
+            <h4>⚡ Hız & Format</h4>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Hız</label>
+                <select id="trim-speed">
+                  <option value="0.75">0.75× (Yavaş)</option>
+                  <option value="1" selected>1.0× (Normal)</option>
+                  <option value="1.25">1.25× (Hızlı)</option>
+                  <option value="1.5">1.5× (Çok Hızlı)</option>
+                  <option value="2.0">2.0× (2 Kat)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Çıkış Dosya Adı</label>
+                <input type="text" id="trim-output-name" value="kirpilmis_ses.mp3" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. BUTONLAR VE KOMUT -->
+        <div class="action-buttons-row">
+          <button class="btn btn-success" onclick="exportAudioDirectly()">💾 Kırpılmış Sesi İndir (Anında / Tarayıcıdan)</button>
+          <button class="btn" onclick="generateAudioTrimCmd()">⚡ FFmpeg Komutu Üret</button>
+        </div>
+        <div class="cmd-box hidden" id="trim-cmd"></div>
+      </div>
+
+      <!-- KESME -->
+      <div class="card" id="card-cut">
+        <div class="card-icon cut">✂️</div>
+        <h3>Video Kesme</h3>
+        <p class="card-desc">Başlangıç ve bitiş zamanı girerek videodan istediğin kısmı kes.</p>
+        <div class="form-group">
+          <label>Video Dosyası (yol)</label>
+          <input type="text" id="cut-input" placeholder="C:\Videos\video.mp4" />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Başlangıç (ss:dd:ss)</label>
+            <input type="text" id="cut-start" placeholder="00:00:10" />
+          </div>
+          <div class="form-group">
+            <label>Süre (sn) / Bitiş</label>
+            <input type="text" id="cut-end" placeholder="00:01:30" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Çıkış Dosyası</label>
+          <input type="text" id="cut-output" placeholder="C:\Videos\output.mp4" />
+        </div>
+
+        <div class="opt-toggle" onclick="toggleSubOpt('cut')">
+          <input type="checkbox" id="cut-has-sub" onclick="event.stopPropagation()" onchange="toggleSubBox('cut')" />
+          <label for="cut-has-sub">💬 Videoya Altyazı Ekle (.srt)</label>
+        </div>
+        <div class="sub-options-box hidden" id="cut-sub-box">
+          <div class="form-group"><label>Altyazı Dosyası (.srt)</label><input type="text" id="cut-sub-file" placeholder="C:\Videos\altyazi.srt" /></div>
+        </div>
+
+        <button class="btn" onclick="generateCut()">Komut Üret</button>
+        <div class="cmd-box hidden" id="cut-cmd"></div>
+      </div>
+
+      <!-- BİRLEŞTİRME -->
+      <div class="card" id="card-merge">
+        <div class="card-icon merge">🔗</div>
+        <h3>Video Birleştirme</h3>
+        <p class="card-desc">Birden fazla videoyu sırasıyla uç uca ekle.</p>
+        <div class="form-group">
+          <label>Videolar (her satıra bir yol)</label>
+          <textarea id="merge-inputs" rows="4" placeholder="C:\Videos\video1.mp4&#10;C:\Videos\video2.mp4&#10;C:\Videos\video3.mp4"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Çıkış Dosyası</label>
+          <input type="text" id="merge-output" placeholder="C:\Videos\birlesik.mp4" />
+        </div>
+        <button class="btn" onclick="generateMerge()">Komut Üret</button>
+        <div class="cmd-box hidden" id="merge-cmd"></div>
+      </div>
+
+      <!-- SES İŞLEMLERİ -->
+      <div class="card" id="card-audio">
+        <div class="card-icon audio">🎵</div>
+        <h3>Ses İşlemleri</h3>
+        <p class="card-desc">Arka plan müziği ekle, sesi çıkar veya ses seviyesini ayarla.</p>
+        <div class="tab-row" id="audioTabs">
+          <button class="tab active" onclick="switchTab('audio','replace')">Sesi Değiştir (Orijinali Kapat)</button>
+          <button class="tab" onclick="switchTab('audio','add')">Arka Plan Müziği (Karıştır)</button>
+          <button class="tab" onclick="switchTab('audio','remove')">Sesi Çıkar (Sessiz Yap)</button>
+          <button class="tab" onclick="switchTab('audio','volume')">Ses Seviyesi</button>
+        </div>
+
+        <div id="audio-replace" class="tab-content active">
+          <div class="form-group"><label>Video Dosyası</label><input type="text" id="audio-rep-video" placeholder="C:\Videos\video.mp4" /></div>
+          <div class="form-group"><label>Yeni Ses / Müzik Dosyası (MP3/WAV)</label><input type="text" id="audio-rep-music" placeholder="C:\Music\muzik.mp3" /></div>
+          <div class="form-group"><label>Çıkış Dosyası</label><input type="text" id="audio-rep-out" placeholder="C:\Videos\output.mp4" /></div>
+        </div>
+
+        <div id="audio-add" class="tab-content">
+          <div class="form-group"><label>Video Dosyası</label><input type="text" id="audio-video" placeholder="C:\Videos\video.mp4" /></div>
+          <div class="form-group"><label>Müzik Dosyası</label><input type="text" id="audio-music" placeholder="C:\Music\muzik.mp3" /></div>
+          <div class="form-group"><label>Müzik Ses Seviyesi (0-1)</label><input type="number" id="audio-vol" value="0.3" min="0" max="2" step="0.1" /></div>
+          <div class="form-group"><label>Çıkış Dosyası</label><input type="text" id="audio-out" placeholder="C:\Videos\output.mp4" /></div>
+        </div>
+
+        <div id="audio-remove" class="tab-content">
+          <div class="form-group"><label>Video Dosyası</label><input type="text" id="audio-rm-video" placeholder="C:\Videos\video.mp4" /></div>
+          <div class="form-group"><label>Çıkış Dosyası</label><input type="text" id="audio-rm-out" placeholder="C:\Videos\sessiz.mp4" /></div>
+        </div>
+
+        <div id="audio-volume" class="tab-content">
+          <div class="form-group"><label>Video Dosyası</label><input type="text" id="audio-vol-video" placeholder="C:\Videos\video.mp4" /></div>
+          <div class="form-group"><label>Ses Çarpanı (1=normal, 2=iki kat)</label><input type="number" id="audio-vol-mult" value="1.5" min="0" max="5" step="0.1" /></div>
+          <div class="form-group"><label>Çıkış Dosyası</label><input type="text" id="audio-vol-out" placeholder="C:\Videos\output.mp4" /></div>
+        </div>
+
+        <!-- ALTYAZI SEÇENEĞİ -->
+        <div class="opt-toggle" onclick="toggleSubOpt('audio')">
+          <input type="checkbox" id="audio-has-sub" onclick="event.stopPropagation()" onchange="toggleSubBox('audio')" />
+          <label for="audio-has-sub">💬 Videoya Altyazı da Göm (.srt)</label>
+        </div>
+        <div class="sub-options-box hidden" id="audio-sub-box">
+          <div class="form-group"><label>Altyazı Dosyası (.srt)</label><input type="text" id="audio-sub-file" placeholder="C:\Videos\altyazi.srt" /></div>
+        </div>
+
+        <button class="btn" onclick="generateAudio()">Komut Üret</button>
+        <div class="cmd-box hidden" id="audio-cmd"></div>
+      </div>
+
+      <!-- OTOMATİK YAPAY ZEKA ALTYAZI (WHISPER) -->
+      <div class="card" id="card-auto-sub" style="border-color: rgba(99,102,241,0.4); background: linear-gradient(180deg, #1c1c2e 0%, #151522 100%);">
+        <div class="card-icon" style="background: rgba(99,102,241,0.2); border-color: var(--accent);">🤖</div>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <h3>Otomatik Altyazı (AI)</h3>
+          <span class="badge" style="background: rgba(99,102,241,0.25); color: #c7d2fe; border-color: var(--accent);">Whisper AI</span>
+        </div>
+        <p class="card-desc">Sesten konuşmaları otomatik algılar, Türkçe altyazı üretir ve videoya ekler (SRT yüklemenize gerek kalmaz!).</p>
+        <div class="form-group">
+          <label>Video Dosyası</label>
+          <input type="text" id="ai-video" placeholder="C:\Videos\video.mp4" />
+        </div>
+        <div class="form-group">
+          <label>Ses / Müzik Dosyası (İsteğe Bağlı)</label>
+          <input type="text" id="ai-audio" placeholder="C:\Music\ses.mp3 (Boş bırakılırsa videonun sesini kullanır)" />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Konuşma Dili</label>
+            <select id="ai-lang">
+              <option value="tr">🇹🇷 Türkçe</option>
+              <option value="auto">🌐 Otomatik Algıla</option>
+              <option value="en">🇬🇧 İngilizce</option>
+              <option value="de">🇩🇪 Almanca</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Yapay Zeka Modeli</label>
+            <select id="ai-model">
+              <option value="base">⚡ Base (Hızlı & Dengeli)</option>
+              <option value="tiny">🚀 Tiny (Çok Hızlı)</option>
+              <option value="small">🎯 Small (Daha Yüksek Doğruluk)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Çıkış Dosyası</label>
+          <input type="text" id="ai-output" placeholder="C:\Videos\altyazili_video.mp4" />
+        </div>
+        <button class="btn" onclick="generateAISubtitle()">AI Altyazı Komutu Üret</button>
+        <div class="cmd-box hidden" id="ai-cmd"></div>
+      </div>
+
+      <!-- ALTYAZI / YAZI -->
+      <div class="card" id="card-subtitle">
+        <div class="card-icon subtitle">💬</div>
+        <h3>Yazı & Altyazı Ekleme</h3>
+        <p class="card-desc">Video üzerine metin yaz veya hazır .srt altyazı dosyası göm.</p>
+        <div class="tab-row" id="subTabs">
+          <button class="tab active" onclick="switchTab('sub','text')">Metin Ekle</button>
+          <button class="tab" onclick="switchTab('sub','srt')">SRT Altyazı</button>
+        </div>
+
+        <div id="sub-text" class="tab-content active">
+          <div class="form-group"><label>Video Dosyası</label><input type="text" id="sub-video" placeholder="C:\Videos\video.mp4" /></div>
+          <div class="form-group"><label>Metin</label><input type="text" id="sub-text-val" placeholder="Merhaba Dünya!" /></div>
+          <div class="form-row">
+            <div class="form-group"><label>Konum X</label><input type="number" id="sub-x" value="50" /></div>
+            <div class="form-group"><label>Konum Y</label><input type="number" id="sub-y" value="50" /></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Yazı Boyutu</label><input type="number" id="sub-size" value="36" /></div>
+            <div class="form-group"><label>Renk</label><input type="text" id="sub-color" value="white" /></div>
+          </div>
+          <div class="form-group"><label>Çıkış Dosyası</label><input type="text" id="sub-out" placeholder="C:\Videos\output.mp4" /></div>
+        </div>
+
+        <div id="sub-srt" class="tab-content">
+          <div class="form-group"><label>Video Dosyası</label><input type="text" id="sub-srt-video" placeholder="C:\Videos\video.mp4" /></div>
+          <div class="form-group"><label>SRT Dosyası</label><input type="text" id="sub-srt-file" placeholder="C:\Videos\altyazi.srt" /></div>
+          <div class="form-group"><label>Çıkış Dosyası</label><input type="text" id="sub-srt-out" placeholder="C:\Videos\output.mp4" /></div>
+        </div>
+
+        <button class="btn" onclick="generateSubtitle()">Komut Üret</button>
+        <div class="cmd-box hidden" id="sub-cmd"></div>
+      </div>
+
+      <!-- BOYUTLANDIRMA -->
+      <div class="card" id="card-resize">
+        <div class="card-icon resize">📐</div>
+        <h3>Boyutlandırma & Kırpma</h3>
+        <p class="card-desc">Shorts, Reels, TikTok için 9:16 veya özel çözünürlüğe dönüştür.</p>
+        <div class="form-group">
+          <label>Video Dosyası</label>
+          <input type="text" id="resize-input" placeholder="C:\Videos\video.mp4" />
+        </div>
+        <div class="form-group">
+          <label>Hedef Format</label>
+          <select id="resize-preset">
+            <option value="1080:1920">📱 Shorts / Reels / TikTok (1080×1920)</option>
+            <option value="1920:1080">🖥️ Full HD (1920×1080)</option>
+            <option value="1280:720">📺 HD (1280×720)</option>
+            <option value="854:480">📻 SD (854×480)</option>
+            <option value="custom">✏️ Özel</option>
+          </select>
+        </div>
+        <div class="form-row hidden" id="custom-size">
+          <div class="form-group"><label>Genişlik (px)</label><input type="number" id="resize-w" value="1080" /></div>
+          <div class="form-group"><label>Yükseklik (px)</label><input type="number" id="resize-h" value="1920" /></div>
+        </div>
+        <div class="form-group">
+          <label>Çıkış Dosyası</label>
+          <input type="text" id="resize-output" placeholder="C:\Videos\output.mp4" />
+        </div>
+
+        <div class="opt-toggle" onclick="toggleSubOpt('resize')">
+          <input type="checkbox" id="resize-has-sub" onclick="event.stopPropagation()" onchange="toggleSubBox('resize')" />
+          <label for="resize-has-sub">💬 Altyazı da Göm (.srt)</label>
+        </div>
+        <div class="sub-options-box hidden" id="resize-sub-box">
+          <div class="form-group"><label>Altyazı Dosyası (.srt)</label><input type="text" id="resize-sub-file" placeholder="C:\Videos\altyazi.srt" /></div>
+        </div>
+
+        <button class="btn" onclick="generateResize()">Komut Üret</button>
+        <div class="cmd-box hidden" id="resize-cmd"></div>
+      </div>
+
+      <!-- HIZ -->
+      <div class="card" id="card-speed">
+        <div class="card-icon speed">⚡</div>
+        <h3>Hız Ayarları</h3>
+        <p class="card-desc">Videoyu hızlandır veya yavaşlat (slow-motion efekti).</p>
+        <div class="form-group">
+          <label>Video Dosyası</label>
+          <input type="text" id="speed-input" placeholder="C:\Videos\video.mp4" />
+        </div>
+        <div class="form-group">
+          <label>Hız Çarpanı</label>
+          <div class="slider-group">
+            <input type="range" id="speed-range" min="0.1" max="4" step="0.1" value="1" oninput="updateSpeedLabel(this.value)" />
+            <span id="speed-label" class="speed-display">1× (Normal)</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Çıkış Dosyası</label>
+          <input type="text" id="speed-output" placeholder="C:\Videos\output.mp4" />
+        </div>
+        <button class="btn" onclick="generateSpeed()">Komut Üret</button>
+        <div class="cmd-box hidden" id="speed-cmd"></div>
+      </div>
+
+      <!-- FORMAT DÖNÜŞTÜRME -->
+      <div class="card" id="card-convert">
+        <div class="card-icon convert">🔄</div>
+        <h3>Format Dönüştürme</h3>
+        <p class="card-desc">MP4, AVI, MOV, GIF, WebM ve daha fazlası arasında dönüştür.</p>
+        <div class="form-group">
+          <label>Kaynak Dosya</label>
+          <input type="text" id="conv-input" placeholder="C:\Videos\video.avi" />
+        </div>
+        <div class="form-group">
+          <label>Hedef Format</label>
+          <select id="conv-format">
+            <option value="mp4">🎬 MP4</option>
+            <option value="avi">🎞️ AVI</option>
+            <option value="mov">🍎 MOV</option>
+            <option value="webm">🌐 WebM</option>
+            <option value="gif">🎭 GIF</option>
+            <option value="mkv">📦 MKV</option>
+            <option value="mp3">🎵 MP3 (Ses Çıkart)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Çıkış Dosyası</label>
+          <input type="text" id="conv-output" placeholder="C:\Videos\output.mp4" />
+        </div>
+        <button class="btn" onclick="generateConvert()">Komut Üret</button>
+        <div class="cmd-box hidden" id="conv-cmd"></div>
+      </div>
+
+      <!-- 🎨 1. SİNEMATİK RENK & VİDEO EFEKTLERİ -->
+      <div class="card" id="card-video-fx">
+        <div class="card-icon" style="background: rgba(236,72,153,0.15); border-color: rgba(236,72,153,0.4);">🎨</div>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <h3>Sinematik Renk & Efektler</h3>
+          <span class="badge badge-purple">Pro FX</span>
+        </div>
+        <p class="card-desc">Film LUT filtreleri, glitch, kamera titremesi, vignette ve dinamik yakınlaştırma.</p>
+        
+        <div class="form-group">
+          <label>Video Dosyası</label>
+          <input type="text" id="vfx-input" placeholder="C:\Videos\video.mp4" />
+        </div>
+
+        <div class="form-group">
+          <label>Sinematik Renk Filtresi (Color Grading)</label>
+          <select id="vfx-color">
+            <option value="none">✨ Doğal / Orijinal Renkler</option>
+            <option value="cinematic-warm">🌅 Sinematik Sıcak (Golden Hour)</option>
+            <option value="cinematic-teal">🌊 Soğuk Mavi & Teal (Film Tonu)</option>
+            <option value="vintage">📻 Vintage / Retro 90s</option>
+            <option value="cyberpunk">🔮 Cyberpunk / Neon Pop</option>
+            <option value="bwhite">🎬 Dramatik Siyah-Beyaz</option>
+            <option value="sepia">📜 Sepya Klasik</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Ek Görsel Efektler (Çoklu Seçilebilir)</label>
+          <div class="opt-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+            <label class="opt-toggle-sm"><input type="checkbox" id="vfx-vignette" /> <span>🎯 Vignette (Odak)</span></label>
+            <label class="opt-toggle-sm"><input type="checkbox" id="vfx-shake" /> <span>📳 Kamera Titremesi</span></label>
+            <label class="opt-toggle-sm"><input type="checkbox" id="vfx-glitch" /> <span>⚡ Glitch & RGB Shift</span></label>
+            <label class="opt-toggle-sm"><input type="checkbox" id="vfx-grain" /> <span>🎞️ Analog Film Grain</span></label>
+            <label class="opt-toggle-sm"><input type="checkbox" id="vfx-zoom" /> <span>🔍 Dynamic Punch-in Zoom</span></label>
+            <label class="opt-toggle-sm"><input type="checkbox" id="vfx-blur" /> <span>💧 Lens Blur</span></label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>İnce Ayarlar (Parlaklık / Doygunluk)</label>
+          <div class="form-row">
+            <div>
+              <span style="font-size:11px; color:var(--text-dim);">Parlaklık</span>
+              <input type="range" id="vfx-brightness" min="-0.3" max="0.3" step="0.05" value="0" />
+            </div>
+            <div>
+              <span style="font-size:11px; color:var(--text-dim);">Doygunluk</span>
+              <input type="range" id="vfx-saturation" min="0" max="2.5" step="0.1" value="1" />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Çıkış Dosyası</label>
+          <input type="text" id="vfx-output" placeholder="C:\Videos\efektli_video.mp4" />
+        </div>
+
+        <button class="btn" onclick="generateVideoFX()">Efekt Komutu Üret</button>
+        <div class="cmd-box hidden" id="vfx-cmd"></div>
+      </div>
+
+      <!-- ✨ 2. VİRAL ALTYAZI & METİN/LOGO STÜDYOSU -->
+      <div class="card" id="card-viral-text">
+        <div class="card-icon" style="background: rgba(234,179,8,0.15); border-color: rgba(234,179,8,0.4);">✨</div>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <h3>Viral Metin & Watermark Stüdyosu</h3>
+          <span class="badge" style="background:rgba(234,179,8,0.2); color:#fef08a; border-color:rgba(234,179,8,0.4);">Trending</span>
+        </div>
+        <p class="card-desc">Alex Hormozi / MrBeast stili kalın başlıklar, kayan altyazı ve PNG logo/filigran yerleştirme.</p>
+
+        <div class="tab-row" id="viralTabs">
+          <button class="tab active" onclick="switchTab('viral','text')">🔥 Viral Başlık & Metin</button>
+          <button class="tab" onclick="switchTab('viral','logo')">🛡️ Logo / Watermark</button>
+        </div>
+
+        <div id="viral-text" class="tab-content active">
+          <div class="form-group"><label>Video Dosyası</label><input type="text" id="vtext-video" placeholder="C:\Videos\video.mp4" /></div>
+          <div class="form-group"><label>Başlık Metni</label><input type="text" id="vtext-text" value="🔥 ABONE OLMAYI UNUTMA!" /></div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Tasarım Preseti</label>
+              <select id="vtext-style">
+                <option value="hormozi-yellow">⚡ Alex Hormozi (Sarı + Kalın Siyah Kontur)</option>
+                <option value="mrbeast-red">🔴 MrBeast (Kırmızı Kutu + Beyaz Metin)</option>
+                <option value="neon-green">🟢 Viral Neon Yeşil (Göz Alıcı)</option>
+                <option value="cyber-box">🟣 Cyber Mor Kutu</option>
+                <option value="simple-clean">⚪ Sade Beyaz & Siyah Gölge</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Ekrandaki Konumu</label>
+              <select id="vtext-pos">
+                <option value="bottom-center">⬇️ Alt Merkez (Standart Altyazı)</option>
+                <option value="middle">🎯 Tam Ekran Ortası (Kanca / Hook)</option>
+                <option value="top-center">⬆️ Üst Merkez (Başlık)</option>
+                <option value="marquee">➡️ Kayan Altyazı (Haber Bandı)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Yazı Boyutu (px)</label><input type="number" id="vtext-size" value="48" /></div>
+            <div class="form-group"><label>Çıkış Dosyası</label><input type="text" id="vtext-out" placeholder="C:\Videos\baslikli_video.mp4" /></div>
+          </div>
+        </div>
+
+        <div id="viral-logo" class="tab-content">
+          <div class="form-group"><label>Video Dosyası</label><input type="text" id="vlogo-video" placeholder="C:\Videos\video.mp4" /></div>
+          <div class="form-group"><label>Logo / Watermark Görseli (.png önerilir)</label><input type="text" id="vlogo-img" placeholder="C:\Images\logo.png" /></div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Logo Konumu</label>
+              <select id="vlogo-pos">
+                <option value="top-right">↗️ Sağ Üst Köşe</option>
+                <option value="top-left">↖️ Sol Üst Köşe</option>
+                <option value="bottom-right">↘️ Sağ Alt Köşe</option>
+                <option value="bottom-left">↙️ Sol Alt Köşe</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Logo Boyutu (Genişlik px)</label>
+              <input type="number" id="vlogo-size" value="160" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Logo Opaklığı (Saydamlık)</label>
+            <div class="slider-group">
+              <input type="range" id="vlogo-opacity" min="0.2" max="1.0" step="0.05" value="0.85" oninput="document.getElementById('vlogo-op-label').textContent = Math.round(this.value*100) + '%'" />
+              <span style="font-size:12px; font-family:var(--mono); color:var(--accent2);" id="vlogo-op-label">85%</span>
+            </div>
+          </div>
+          <div class="form-group"><label>Çıkış Dosyası</label><input type="text" id="vlogo-out" placeholder="C:\Videos\filigranli_video.mp4" /></div>
+        </div>
+
+        <button class="btn" onclick="generateViralText()">Metin / Logo Komutu Üret</button>
+        <div class="cmd-box hidden" id="viral-cmd"></div>
+      </div>
+
+      <!-- 🔊 3. SES EFEKTLERİ & VOICE CHANGER -->
+      <div class="card" id="card-voice-fx">
+        <div class="card-icon" style="background: rgba(14,165,233,0.15); border-color: rgba(14,165,233,0.4);">🔊</div>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <h3>Ses Efektleri & Voice Mod</h3>
+          <span class="badge badge-tech">Voice FX</span>
+        </div>
+        <p class="card-desc">Sincap, robotik, canavar ses modülatörü, meme bass boost, yankı ve gürültü engelleme.</p>
+
+        <div class="form-group">
+          <label>Kaynak Dosya (Video veya MP3/WAV)</label>
+          <input type="text" id="voice-input" placeholder="C:\Videos\video.mp4" />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Ses Değiştirici (Voice Pitch)</label>
+            <select id="voice-mod">
+              <option value="none">🎙️ Doğal / Orijinal Ses</option>
+              <option value="chipmunk">🐿️ Sincap / Chipmunk (Çok Tiz)</option>
+              <option value="deep">👹 Canavar / Deep Voice (Derin Bas)</option>
+              <option value="robotic">🤖 Robotik Efekt (Flanger & Mod)</option>
+              <option value="walkie">📻 Telsiz / Walkie-Talkie</option>
+              <option value="megaphone">📢 Megafon / Sokak Anonsu</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Özel Efekt & Ses Filtresi</label>
+            <select id="voice-eq">
+              <option value="none">Kapalı</option>
+              <option value="bass-boost">💣 Bass Boost (+8dB)</option>
+              <option value="ear-rape">💥 Extreme Meme Boost (Distortion)</option>
+              <option value="reverb">🏛️ Katedral / Büyük Oda Yankısı</option>
+              <option value="noise-reduction">🤫 Akıllı Gürültü Engelleme (De-noise)</option>
+              <option value="loudnorm">📊 Profesyonel Ses Normalizasyonu</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Genel Ses Seviyesi Çarpanı</label>
+          <div class="slider-group">
+            <input type="range" id="voice-vol" min="0.2" max="3.0" step="0.1" value="1.0" oninput="document.getElementById('voice-vol-lbl').textContent = Math.round(this.value*100) + '%'" />
+            <span id="voice-vol-lbl" class="speed-display" style="min-width:60px;">100%</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Çıkış Dosyası</label>
+          <input type="text" id="voice-output" placeholder="C:\Videos\ses_efektli.mp4" />
+        </div>
+
+        <button class="btn" onclick="generateVoiceFX()">Ses Efekti Komutu Üret</button>
+        <div class="cmd-box hidden" id="voice-cmd"></div>
+      </div>
+
+      <!-- 🖼️ 4. PICTURE-IN-PICTURE (PiP) & SPLIT SCREEN -->
+      <div class="card" id="card-pip-split">
+        <div class="card-icon" style="background: rgba(168,85,247,0.15); border-color: rgba(168,85,247,0.4);">🖼️</div>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <h3>Picture-in-Picture & Split Screen</h3>
+          <span class="badge badge-purple">Multi-Cam</span>
+        </div>
+        <p class="card-desc">Webcam / tepki karesi (PiP) veya iki videoyu yan yana/alt alta bölünmüş ekran birleştirme.</p>
+
+        <div class="tab-row" id="pipTabs">
+          <button class="tab active" onclick="switchTab('pip','pip')">📹 Picture-in-Picture (Webcam)</button>
+          <button class="tab" onclick="switchTab('pip','split')">🔀 Split Screen (İkili Ekran)</button>
+        </div>
+
+        <div id="pip-pip" class="tab-content active">
+          <div class="form-group"><label>Ana Video (Arka Plan / Oyun / Sunum)</label><input type="text" id="pip-main-video" placeholder="C:\Videos\ana_video.mp4" /></div>
+          <div class="form-group"><label>Köşe Videosu (Webcam / Tepki / Facecam)</label><input type="text" id="pip-sub-video" placeholder="C:\Videos\webcam.mp4" /></div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Webcam Konumu</label>
+              <select id="pip-corner">
+                <option value="bottom-right">↘️ Sağ Alt Köşe</option>
+                <option value="bottom-left">↙️ Sol Alt Köşe</option>
+                <option value="top-right">↗️ Sağ Üst Köşe</option>
+                <option value="top-left">↖️ Sol Üst Köşe</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Webcam Boyutu</label>
+              <select id="pip-scale">
+                <option value="0.25">Küçük (%25 Genişlik)</option>
+                <option value="0.33" selected>Orta (%33 Genişlik)</option>
+                <option value="0.50">Büyük (%50 Genişlik)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Çıkış Dosyası</label>
+            <input type="text" id="pip-out" placeholder="C:\Videos\pip_video.mp4" />
+          </div>
+        </div>
+
+        <div id="pip-split" class="tab-content">
+          <div class="form-group"><label>1. Video (Sol veya Üst)</label><input type="text" id="split-v1" placeholder="C:\Videos\video1.mp4" /></div>
+          <div class="form-group"><label>2. Video (Sağ veya Alt)</label><input type="text" id="split-v2" placeholder="C:\Videos\video2.mp4" /></div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Bölünme Formatı</label>
+              <select id="split-mode">
+                <option value="horizontal">↔️ Yan Yana (Horizontal Split)</option>
+                <option value="vertical">↕️ Alt Alta (Vertical Split - Shorts/TikTok)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Çıkış Dosyası</label>
+              <input type="text" id="split-out" placeholder="C:\Videos\split_video.mp4" />
+            </div>
+          </div>
+        </div>
+
+        <button class="btn" onclick="generatePipSplit()">PiP / Split Komutu Üret</button>
+        <div class="cmd-box hidden" id="pip-cmd"></div>
+      </div>
+
+      <!-- 📸 5. AKILLI THUMBNAIL & ZAMAN ARAÇLARI -->
+      <div class="card" id="card-thumb-time">
+        <div class="card-icon" style="background: rgba(34,197,94,0.15); border-color: rgba(34,197,94,0.4);">📸</div>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <h3>Kapak (Thumbnail) & Zaman Araçları</h3>
+          <span class="badge badge-green">Speed & Visual</span>
+        </div>
+        <p class="card-desc">Yüksek kaliteli kapak görseli çıkarma, video ters sarma (reverse) ve hızlı time-lapse oluşturma.</p>
+
+        <div class="tab-row" id="thumbTabs">
+          <button class="tab active" onclick="switchTab('thumb','thumb')">🖼️ Kapak Resmi (Thumbnail)</button>
+          <button class="tab" onclick="switchTab('thumb','time')">⏳ Zaman & Ters Sarma (Reverse)</button>
+        </div>
+
+        <div id="thumb-thumb" class="tab-content active">
+          <div class="form-group"><label>Kaynak Video</label><input type="text" id="thumb-video" placeholder="C:\Videos\video.mp4" /></div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Yakalama Zamanı (ss:dd:ss veya sn)</label>
+              <input type="text" id="thumb-time" value="00:00:05" />
+            </div>
+            <div class="form-group">
+              <label>Kapak Formatı & Kalite</label>
+              <select id="thumb-format">
+                <option value="jpg-best">📸 JPG (Maksimum Kalite - q:v 2)</option>
+                <option value="png">💎 PNG (Kayıpsız / Şeffaflık Destekli)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group"><label>Çıkış Görsel Dosyası</label><input type="text" id="thumb-out" value="thumbnail.jpg" /></div>
+        </div>
+
+        <div id="thumb-time" class="tab-content">
+          <div class="form-group"><label>Kaynak Video</label><input type="text" id="time-video" placeholder="C:\Videos\video.mp4" /></div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Zaman İşlemi</label>
+              <select id="time-effect">
+                <option value="reverse">⏪ Video Ters Çevirme (Reverse / Rewind)</option>
+                <option value="timelapse-5x">⏩ Time-Lapse (5× Hızlı Akış)</option>
+                <option value="timelapse-10x">⚡ Time-Lapse (10× Ultra Hızlı)</option>
+                <option value="timelapse-30x">🚀 Time-Lapse (30× Hyper-Lapse)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Ses Durumu</label>
+              <select id="time-audio">
+                <option value="reverse">Ses de Ters Çevrilsin (Reverse Audio)</option>
+                <option value="mute">Sesi Kapat (Sessiz Yap - an)</option>
+                <option value="speedup">Sesi de Hızlandır</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group"><label>Çıkış Dosyası</label><input type="text" id="time-out" placeholder="C:\Videos\zaman_efektli.mp4" /></div>
+        </div>
+
+        <button class="btn" onclick="generateThumbTime()">Zaman / Kapak Komutu Üret</button>
+        <div class="cmd-box hidden" id="thumbtime-cmd"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- KURULUM -->
+  <section class="install-section" id="install-section">
+    <div class="install-inner">
+      <div class="install-text">
+        <h2>Kurulum Rehberi</h2>
+        <p>Komutları çalıştırmadan önce FFmpeg'i bilgisayarınıza kurmanız gerekiyor.</p>
+        <div class="step-list">
+          <div class="step">
+            <span class="step-num">1</span>
+            <div>
+              <strong>FFmpeg İndir</strong>
+              <p>ffmpeg.org/download.html adresinden Windows binary'sini indir.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-num">2</span>
+            <div>
+              <strong>PATH'e Ekle</strong>
+              <p>Çıkarttığın klasörü Sistem Ortam Değişkenleri → PATH'e ekle.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-num">3</span>
+            <div>
+              <strong>Doğrula</strong>
+              <code>ffmpeg -version</code>
+            </div>
+          </div>
+        </div>
+        <a href="https://ffmpeg.org/download.html" target="_blank" class="btn btn-outline">FFmpeg İndir →</a>
+      </div>
+      <div class="install-term">
+        <div class="terminal-preview">
+          <div class="terminal-bar">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="terminal-title">PowerShell</span>
+          </div>
+          <div class="terminal-body">
+            <div><span class="t-dim">PS C:\></span> <span class="t-cmd">winget install ffmpeg</span></div>
+            <div class="t-dim">— VEYA —</div>
+            <div><span class="t-dim">PS C:\></span> <span class="t-cmd">choco install ffmpeg</span></div>
+            <div class="t-out">FFmpeg 7.1 başarıyla kuruldu ✓</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PYTHON SCRIPT INDIR -->
+  <section class="python-section">
+    <div class="python-inner">
+      <h2>🐍 Python Script (Gelişmiş)</h2>
+      <p>Tüm işlemleri otomatikleştirmek için hazır Python scriptini indir ve çalıştır.</p>
+      <button class="btn btn-large" onclick="downloadPythonScript()">Python Scriptini İndir (.py)</button>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>VideoForge — FFmpeg & Python | Ücretsiz & Açık Kaynak Araçlar</p>
+  </footer>
+
+  <div class="toast hidden" id="toast">📋 Komut kopyalandı!</div>
+
+  <!-- LOADING OVERLAY -->
+  <div class="loading-overlay hidden" id="loadingOverlay">
+    <div class="loading-spinner"></div>
+    <div class="loading-text">Ses dosyası yükleniyor...</div>
+  </div>
+
+  <!-- SCROLL TO TOP -->
+  <button class="scroll-top-btn" id="scrollTopBtn" title="Sayfanın başına dön">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <script src="app.js"></script>
+</body>
+</html>
